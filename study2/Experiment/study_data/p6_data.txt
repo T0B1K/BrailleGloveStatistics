@@ -1,0 +1,130 @@
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	o
+Submitted Value	fjl
+Test Time (ms)	9873
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	o
+Submitted Value	fl
+Test Time (ms)	2783
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	o
+Submitted Value	fl
+Test Time (ms)	774
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	l
+Submitted Value	fdl
+Test Time (ms)	19426
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	l
+Submitted Value	dfl
+Test Time (ms)	4562
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	l
+Submitted Value	dfl
+Test Time (ms)	4146
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	d
+Submitted Value	fjl
+Test Time (ms)	6285
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	d
+Submitted Value	fdjk
+Test Time (ms)	7801
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	d
+Submitted Value	fl
+Test Time (ms)	2243
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	old
+Submitted Value	f f l 
+Test Time (ms)	186099
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	old
+Submitted Value	fdl fl dfl
+Test Time (ms)	30803
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	old
+Submitted Value	fdl dl dfk 
+Test Time (ms)	29478
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	old
+Submitted Value	fdl dl fkl
+Test Time (ms)	19583
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	p
+Submitted Value	fdj
+Test Time (ms)	6756
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	p
+Submitted Value	fdj
+Test Time (ms)	1476
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	p
+Submitted Value	fdj
+Test Time (ms)	1713
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	u
+Submitted Value	fl
+Test Time (ms)	3982
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	u
+Submitted Value	fl
+Test Time (ms)	804
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	u
+Submitted Value	fl
+Test Time (ms)	1029
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	u
+Submitted Value	fl
+Test Time (ms)	2074
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	b
+Submitted Value	fd
+Test Time (ms)	5247
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	b
+Submitted Value	fd
+Test Time (ms)	592
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	b
+Submitted Value	fd
+Test Time (ms)	491
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	pub
+Submitted Value	sdl dfk fd 
+Test Time (ms)	22740
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	pub
+Submitted Value	fd l fdl fdl
+Test Time (ms)	16409
+console.table() test_data(1).html:311:21
+(Position)	Wert
+Test	pub
+Submitted Value	fdl dl d
+Test Time (ms)	13314
