@@ -1,22 +1,34 @@
-name: Deploy GitHub Page with Colab Link
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # Trigger deployment on push to the main branch
 
 permissions:
-  contents: write
-  id-token: write  # Ensure necessary permissions are granted
+  contents: write  # Allows the workflow to push code to the repository
+  pages: write     # Allows deployment to GitHub Pages
+  id-token: write  # Allows the workflow to request an ID token for authentication
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'  # Specify the Node.js version you need
+
+      - name: Install dependencies
+        run: |
+          npm install  # Adjust this command based on your project's package manager
+
+      - name: Build the project
+        run: |
+          npm run build  # Replace with your project's build command
 
       - name: Create HTML file with Colab link
         run: |
@@ -40,18 +52,22 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages  # Ensure this name is consistent
+          name: github-pages
           path: public
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build-deploy
+    needs: build
     environment:
-      name: github-pages  # Specify the deployment environment
+      name: github-pages
     steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          token: ${{ secrets.DEPLOYMENT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use the default GITHUB_TOKEN for authentication
+          artifact_name: github-pages
         env:
-          ACTIONS_STEP_DEBUG: true  # Enable step debugging
+          ACTIONS_STEP_DEBUG: true  # Enable verbose logging for debugging
