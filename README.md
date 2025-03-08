@@ -1,1 +1,2 @@
 # BrailleGloveStatistics
+changed folder names
