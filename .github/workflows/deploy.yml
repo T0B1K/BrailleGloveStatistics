@@ -14,8 +14,9 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
 
-      - name: Set up GitHub Pages
-        uses: actions/configure-pages@v3
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      
 
       - name: Create HTML file with Colab link
         run: |
