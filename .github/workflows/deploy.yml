@@ -25,11 +25,10 @@ jobs:
 
       - name: Build JupyterLite site
         run: |
-          jupyter lite build
+          jupyter lite build --contents content/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_output
-
