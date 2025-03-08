@@ -16,7 +16,6 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      
 
       - name: Create HTML file with Colab link
         run: |
@@ -38,8 +37,9 @@ jobs:
           </html>' > public/index.html
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
+          name: public
           path: public
 
   deploy:
