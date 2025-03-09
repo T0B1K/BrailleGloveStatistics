@@ -25,35 +25,39 @@ jobs:
         run: |
           cd content/study1/questionnaire
           jupyter nbconvert --to html study1_questionnaire.ipynb
+          mv *.html ../../../docs/first-study
           cd ../../..
 
       - name: Convert Study 1 Experiments
         run: |
           cd content/study1/experiment
           jupyter nbconvert --to html study1_experiment.ipynb
+          mv *.html ../../../docs/first-study
           cd ../../..
 
       - name: Convert Study 2 Questionnaires
         run: |
           cd content/study2/questionnaire
           jupyter nbconvert --to html study2_questionnaire.ipynb
+          mv *.html ../../../docs/second-study
           cd ../../..
   
       - name: Convert Study 2 Experiments
         run: |
           cd content/study2/experiment
           jupyter nbconvert --to html study2_experiment.ipynb
+          mv *.html ../../../docs/second-study
           cd ../../..
  
       - name: Create docs directory if not exists
         run: mkdir -p docs
 
-      - name: Move HTML files to docs
-        run: |
-          mv study1/questionnaire/*.html docs/
-          mv study1/experiment/*.html docs/
-          mv study2/questionnaire/*.html docs/
-          mv study2/experiment/*.html docs/
+    #   - name: Move HTML files to docs
+    #     run: |
+    #       mv study1/questionnaire/*.html docs/
+    #       mv study1/experiment/*.html docs/
+    #       mv study2/questionnaire/*.html docs/
+    #       mv study2/experiment/*.html docs/
 
       - name: Commit and push changes
         run: |
