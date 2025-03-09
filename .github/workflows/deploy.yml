@@ -49,8 +49,8 @@ jobs:
           mv *.html ../../../docs/second-study
           cd ../../..
  
-      - name: Create docs directory if not exists
-        run: mkdir -p docs
+    #   - name: Create docs directory if not exists
+    #     run: mkdir -p docs
 
     #   - name: Move HTML files to docs
     #     run: |
