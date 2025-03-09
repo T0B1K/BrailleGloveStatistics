@@ -23,27 +23,27 @@ jobs:
 
       - name: Convert Study 1 Questionnaires
         run: |
-          cd study1/questionnaire
+          cd content/study1/questionnaire
           jupyter nbconvert --to html study1_questionnaire.ipynb
-          cd ../..
+          cd ../../..
 
       - name: Convert Study 1 Experiments
         run: |
-          cd study1/experiment
+          cd content/study1/experiment
           jupyter nbconvert --to html study1_experiment.ipynb
-          cd ../..
+          cd ../../..
 
       - name: Convert Study 2 Questionnaires
         run: |
-          cd study2/questionnaire
+          cd content/study2/questionnaire
           jupyter nbconvert --to html study2_questionnaire.ipynb
-          cd ../..
+          cd ../../..
   
       - name: Convert Study 2 Experiments
         run: |
-          cd study2/experiment
+          cd content/study2/experiment
           jupyter nbconvert --to html study2_experiment.ipynb
-          cd ../..
+          cd ../../..
  
       - name: Create docs directory if not exists
         run: mkdir -p docs
