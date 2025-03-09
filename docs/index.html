@@ -23,25 +23,69 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
+        /* Initially hide the submenus */
+        nav ul li ul {
+            display: none;
+            margin-left: 20px;
+        }
+        /* Container for loaded HTML content */
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>Studies Overview</h1>
     <nav>
         <ul>
-            <li><strong>First Study</strong>
-                <ul>
-                    <li><a href="first-study/questionnaires.html">Questionnaires</a></li>
-                    <li><a href="first-study/experiments.html">Experiments</a></li>
+            <li>
+                <strong onclick="toggleVisibility('first-study', 'first-study-content')">First Study</strong>
+                <ul id="first-study">
+                    <li><a href="javascript:void(0)" onclick="loadContent('first-study/study1_questionnaire.html', 'first-study-content')">Questionnaires</a></li>
+                    <li><a href="javascript:void(0)" onclick="loadContent('first-study/study1_experiment.html', 'first-study-content')">Experiments</a></li>
                 </ul>
+                <div id="first-study-content" class="content"></div>
             </li>
-            <li><strong>Second Study</strong>
-                <ul>
-                    <li><a href="second-study/questionnaires.html">Questionnaires</a></li>
-                    <li><a href="second-study/experiments.html">Experiments</a></li>
+            <li>
+                <strong onclick="toggleVisibility('second-study', 'second-study-content')">Second Study</strong>
+                <ul id="second-study">
+                    <li><a href="javascript:void(0)" onclick="loadContent('second-study/study2_questionnaire.html', 'second-study-content')">Questionnaires</a></li>
+                    <li><a href="javascript:void(0)" onclick="loadContent('second-study/study2_experiment.html', 'second-study-content')">Experiments</a></li>
                 </ul>
+                <div id="second-study-content" class="content"></div>
             </li>
         </ul>
     </nav>
+
+    <script>
+        // Function to toggle the visibility of the submenu and content
+        function toggleVisibility(studyId, contentId) {
+            const submenu = document.getElementById(studyId);
+            const content = document.getElementById(contentId);
+            if (submenu.style.display === 'none' || submenu.style.display === '') {
+                submenu.style.display = 'block'; // Unfold
+                content.style.display = 'none'; // Hide content if menu is folded
+            } else {
+                submenu.style.display = 'none'; // Fold back
+                content.style.display = 'none'; // Hide content when folded
+            }
+        }
+
+        // Function to load content dynamically into the div
+        function loadContent(url, contentId) {
+            const contentDiv = document.getElementById(contentId);
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    contentDiv.innerHTML = data; // Insert the HTML content into the div
+                    contentDiv.style.display = 'block'; // Display the content
+                })
+                .catch(error => {
+                    contentDiv.innerHTML = "<p>Error loading content.</p>"; // Error message
+                    contentDiv.style.display = 'block';
+                });
+        }
+    </script>
 </body>
 </html>

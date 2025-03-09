@@ -7576,7 +7576,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">pastel_colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">"pastel"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -7600,10 +7600,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="k">def</span> <span class="nf">splitText</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">splitText</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
   <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Test\s+(\S+)\s+Submitted Value\s+(.+?)\s+Test Time \(ms\)\s+(\d+)"</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
 
   <span class="c1"># Find all matches and convert them to dictionaries</span>
@@ -7620,7 +7620,7 @@ a.anchor-link {
   <span class="c1"># Display the extracted data</span>
   <span class="k">return</span> <span class="n">results</span>
 
-<span class="k">def</span> <span class="nf">openTextDocument</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">openTextDocument</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
   <span class="n">contents</span> <span class="o">=</span> <span class="s2">""</span>
   <span class="k">try</span><span class="p">:</span>
       <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -7629,7 +7629,7 @@ a.anchor-link {
       <span class="nb">print</span><span class="p">(</span><span class="s2">"File not found."</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">contents</span>
 
-<span class="k">def</span> <span class="nf">getPandasDataFrameFromText</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getPandasDataFrameFromText</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
   <span class="n">text</span> <span class="o">=</span> <span class="n">openTextDocument</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
   <span class="n">splittedText</span> <span class="o">=</span> <span class="n">splitText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">splittedText</span><span class="p">)</span>
@@ -7690,12 +7690,12 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">dice_coefficient</span><span class="p">(</span><span class="n">set1</span><span class="p">,</span> <span class="n">set2</span><span class="p">):</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dice_coefficient</span><span class="p">(</span><span class="n">set1</span><span class="p">,</span> <span class="n">set2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Calculate the Dice coefficient between two sets."""</span>
     <span class="n">intersection</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">intersection</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">jaccard_coefficient</span><span class="p">(</span><span class="n">set1</span><span class="p">,</span> <span class="n">set2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jaccard_coefficient</span><span class="p">(</span><span class="n">set1</span><span class="p">,</span> <span class="n">set2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Calculate the Jaccard coefficient between two sets."""</span>
     <span class="n">intersection</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>
     <span class="n">union</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">set1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>
@@ -7741,7 +7741,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># dataframe = getPandasDataFrameFromText(participantDataOrder[0][1])</span>
-<span class="k">def</span> <span class="nf">deciderFunction</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">deciderFunction</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'t'</span><span class="p">,</span> <span class="s1">'h'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'the'</span><span class="p">]:</span>
     <span class="k">return</span> <span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
   <span class="k">if</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'o'</span><span class="p">,</span> <span class="s1">'l'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'old'</span><span class="p">]:</span>
@@ -8134,9 +8134,9 @@ hi
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">dice</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dice</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">dice_coefficient</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">),</span> <span class="n">setMapper</span><span class="p">[</span><span class="n">tested_character</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">jaccard</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jaccard</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">jaccard_coefficient</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">),</span> <span class="n">setMapper</span><span class="p">[</span><span class="n">tested_character</span><span class="p">])</span>
 
 <span class="n">dataframe_no_tests</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">"dice_coefficient"</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataframe_no_tests</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">dice</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"Submitted Value"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">"Test"</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -8885,7 +8885,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">filterDataFrame</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">dataframe</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">filterDataFrame</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">dataframe</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">]</span>
 
 <span class="n">dataframe_no_tests_s</span> <span class="o">=</span> <span class="n">filterDataFrame</span><span class="p">(</span><span class="s2">"S"</span><span class="p">,</span> <span class="n">dataframe_no_tests</span><span class="p">,</span> <span class="s2">"Condition"</span><span class="p">)</span>
@@ -9513,20 +9513,20 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.multicomp</span> <span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.multicomp</span> <span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.multicomp</span><span class="w"> </span><span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.multicomp</span><span class="w"> </span><span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
 
-<span class="k">def</span> <span class="nf">printBoxplots</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="s2">"jaccard_coefficient"</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">printBoxplots</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="s2">"jaccard_coefficient"</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot boxplots for each 'Test' condition as individual subplots arranged in a 3x3 grid.</span>
 <span class="sd">    Also perform ANOVA or Kruskal-Wallis test based on normality and homogeneity of variances.</span>
@@ -9575,7 +9575,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'/content/Test_single_char.pdf'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'pdf'</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">plot_boxplot</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_boxplot</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot the boxplot for a given test with a swarmplot on top.</span>
 
@@ -9619,7 +9619,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="c1"># Set the y-axis range from 0 to 1</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_medians</span><span class="p">(</span><span class="n">question_data</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_medians</span><span class="p">(</span><span class="n">question_data</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Print the median for each condition in the current question.</span>
 
@@ -9634,7 +9634,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">condition</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">median</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">perform_levenes_test</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_levenes_test</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform Levene's test for homogeneity of variances.</span>
 
@@ -9652,7 +9652,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 <span class="c1"># Check normality using Shapiro-Wilk</span>
-<span class="k">def</span> <span class="nf">check_normality</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_normality</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform Shapiro-Wilk test for normality.</span>
 
@@ -9667,7 +9667,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="k">return</span> <span class="n">p_value</span> <span class="o">&gt;</span> <span class="mf">0.05</span>  <span class="c1"># p-value &gt; 0.05 indicates normality</span>
 
 
-<span class="k">def</span> <span class="nf">prepare_data_for_plotting</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prepare_data_for_plotting</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Prepare the data for plotting by replacing the stimulus names and selecting relevant columns.</span>
 
@@ -9683,7 +9683,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="k">return</span> <span class="n">pivot_df</span>
 
 
-<span class="k">def</span> <span class="nf">perform_anova</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_anova</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform an ANOVA test to check for significant differences between conditions.</span>
 
@@ -9705,13 +9705,13 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="k">return</span> <span class="n">p_value</span>
 
 
-<span class="k">def</span> <span class="nf">calculate_eta_squared</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_eta_squared</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
     <span class="c1"># Correct formula for eta-squared for Kruskal-Wallis</span>
     <span class="n">eta_squared</span> <span class="o">=</span> <span class="n">H</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">eta_squared</span>
 
 
-<span class="k">def</span> <span class="nf">perform_kruskal_wallis</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_kruskal_wallis</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform a Kruskal-Wallis test for non-parametric data.</span>
 
@@ -9733,7 +9733,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="k">return</span> <span class="n">h_stat</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">print_anova_result</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">p_value</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_anova_result</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">p_value</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Print the result of the ANOVA test.</span>
 
@@ -9747,7 +9747,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  * No significant difference found for '</span><span class="si">{</span><span class="n">test</span><span class="si">}</span><span class="s2">' between conditions."</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_kruskal_wallis_result</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">p_value</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_kruskal_wallis_result</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">p_value</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Print the result of the Kruskal-Wallis test.</span>
 
@@ -9761,7 +9761,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  * No significant difference found for '</span><span class="si">{</span><span class="n">test</span><span class="si">}</span><span class="s2">' between conditions."</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_posthoc_analysis</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_posthoc_analysis</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform post-hoc analysis using Tukey's HSD when a significant difference is found.</span>
 
@@ -10056,13 +10056,13 @@ Kruskal-Wallis: H-stat: 3.6667, p-value: 0.1599
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats</span> <span class="kn">import</span> <span class="n">weightstats</span> <span class="k">as</span> <span class="n">stests</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">weightstats</span> <span class="k">as</span> <span class="n">stests</span>
 
 <span class="c1"># Test if the data is normally distributed</span>
-<span class="k">def</span> <span class="nf">check_normality</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dataset_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_normality</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dataset_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform the Shapiro-Wilk test for normality on a dataset.</span>
 
@@ -10083,7 +10083,7 @@ Kruskal-Wallis: H-stat: 3.6667, p-value: 0.1599
         <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Normally distributed</span>
 
 <span class="c1"># Test homogeneity of variances with Levene's test</span>
-<span class="k">def</span> <span class="nf">check_homogeneity_of_variances</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_homogeneity_of_variances</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform Levene's test for homogeneity of variances.</span>
 
@@ -10104,7 +10104,7 @@ Kruskal-Wallis: H-stat: 3.6667, p-value: 0.1599
         <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Variances are equal</span>
 
 <span class="c1"># Perform Kruskal-Wallis or ANOVA based on assumptions</span>
-<span class="k">def</span> <span class="nf">perform_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">normality_results</span><span class="p">,</span> <span class="n">homogeneity_result</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">normality_results</span><span class="p">,</span> <span class="n">homogeneity_result</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Decide whether to perform ANOVA or Kruskal-Wallis based on normality and homogeneity of variances.</span>
 
@@ -10124,7 +10124,7 @@ Kruskal-Wallis: H-stat: 3.6667, p-value: 0.1599
         <span class="n">perform_kruskal_wallis</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Perform ANOVA</span>
-<span class="k">def</span> <span class="nf">perform_anova</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_anova</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform an ANOVA test.</span>
 
@@ -10144,7 +10144,7 @@ Kruskal-Wallis: H-stat: 3.6667, p-value: 0.1599
     <span class="k">return</span> <span class="n">p_value</span>
 
 <span class="c1"># Perform Kruskal-Wallis Test</span>
-<span class="k">def</span> <span class="nf">perform_kruskal_wallis</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_kruskal_wallis</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform a Kruskal-Wallis test.</span>
 
@@ -10565,7 +10565,7 @@ There is no significant difference between the datasets.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">jaccard_word_score</span><span class="p">(</span><span class="n">word</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">test_word</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">jaccard_word_score</span><span class="p">(</span><span class="n">word</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">test_word</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_word</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">()):</span>
     <span class="k">return</span> <span class="mi">0</span>
   <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">jaccard</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">test_word</span><span class="p">))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">test_word</span><span class="p">)</span>
@@ -10957,12 +10957,12 @@ There is no significant difference between the datasets.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
 
 <span class="c1"># Perform Levene's Test for homogeneity of variances</span>
-<span class="k">def</span> <span class="nf">perform_levene_test</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_levene_test</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">stat_levene</span><span class="p">,</span> <span class="n">p_value_levene</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">levene</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Levene's Test statistic: </span><span class="si">{</span><span class="n">stat_levene</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">p_value_levene</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">p_value_levene</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
@@ -10973,7 +10973,7 @@ There is no significant difference between the datasets.
 
 
 <span class="c1"># Check for significance based on p-value</span>
-<span class="k">def</span> <span class="nf">check_significance</span><span class="p">(</span><span class="n">p_value</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_significance</span><span class="p">(</span><span class="n">p_value</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"There is a significant difference between the datasets."</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -10981,15 +10981,15 @@ There is no significant difference between the datasets.
 
 
 <span class="c1"># Helper Function for Post-Hoc Test (Tukey’s HSD) if necessary</span>
-<span class="k">def</span> <span class="nf">post_hoc_test</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">statsmodels.stats.multicomp</span> <span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">post_hoc_test</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.multicomp</span><span class="w"> </span><span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
     <span class="n">all_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="sa">f</span><span class="s2">"Condition </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)])</span>
     <span class="n">tukey</span> <span class="o">=</span> <span class="n">pairwise_tukeyhsd</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">tukey</span><span class="p">)</span>
 
 <span class="c1"># Main analysis function</span>
-<span class="k">def</span> <span class="nf">analyze_datasets</span><span class="p">(</span><span class="n">dataframes</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_datasets</span><span class="p">(</span><span class="n">dataframes</span><span class="p">):</span>
     <span class="c1"># Prepare data for analysis</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">dataframes</span><span class="p">[</span><span class="s1">'Vibration'</span><span class="p">][</span><span class="s1">'jaccard_word_score'</span><span class="p">],</span>
@@ -11063,20 +11063,20 @@ There is no significant difference between the datasets.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
 
 <span class="c1"># Function to Plot Boxplots with Swarmplots and Perform Statistical Tests</span>
-<span class="k">def</span> <span class="nf">print_boxplots_and_tests</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="s2">"jaccard_coefficient"</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_boxplots_and_tests</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="s2">"jaccard_coefficient"</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot boxplots for each 'Test' condition and perform Levene's, Shapiro-Wilk, ANOVA/Kruskal-Wallis tests.</span>
 
@@ -11137,7 +11137,7 @@ There is no significant difference between the datasets.
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'/content/JaccardTest.pdf'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'pdf'</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">plot_boxplot_with_swarmplot</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_boxplot_with_swarmplot</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Helper function to plot the boxplot with a swarmplot on top for a given test.</span>
 
@@ -11298,22 +11298,22 @@ There is no significant difference between the datasets.
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">compareCharacters</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">def</span> <span class="nf">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">setMapper</span><span class="p">[</span><span class="n">tested_character</span><span class="p">])</span>
 
-<span class="k">def</span> <span class="nf">get_FP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_FP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">)</span> <span class="o">-</span> <span class="n">setMapper</span><span class="p">[</span><span class="n">tested_character</span><span class="p">])</span>
 
-<span class="k">def</span> <span class="nf">get_FN</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_FN</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">setMapper</span><span class="p">[</span><span class="n">tested_character</span><span class="p">]</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">precision</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">)</span> <span class="o">+</span> <span class="n">get_FP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">recall</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">recall</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">)</span> <span class="o">+</span> <span class="n">get_FN</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">f1_score</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f1_score</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">):</span>
   <span class="n">prec</span> <span class="o">=</span> <span class="n">precision</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">)</span>
   <span class="n">rec</span> <span class="o">=</span> <span class="n">recall</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">)</span>
 
@@ -11325,7 +11325,7 @@ There is no significant difference between the datasets.
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">prec</span> <span class="o">*</span> <span class="n">rec</span><span class="p">)</span> <span class="o">/</span> <span class="n">divisor</span>
 
 
-<span class="k">def</span> <span class="nf">testFunction</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">testFunction</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
 
   <span class="n">tmp</span> <span class="o">=</span> <span class="p">[(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">),</span> <span class="n">precision</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">),</span> <span class="n">recall</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">),</span> <span class="n">get_TP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">),</span> <span class="n">get_FP</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">,</span> <span class="n">tested_character</span><span class="p">),</span>
          <span class="nb">set</span><span class="p">(</span><span class="n">submitted_value</span><span class="p">),</span> <span class="n">setMapper</span><span class="p">[</span><span class="n">tested_character</span><span class="p">],</span>
@@ -11690,11 +11690,11 @@ There is no significant difference between the datasets.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kruskal</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">kruskal</span>
 
-<span class="k">def</span> <span class="nf">plot_boxplots_with_swarm</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="s2">"F1"</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_boxplots_with_swarm</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="s2">"F1"</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot boxplots for each 'Tested Character' condition as individual subplots arranged in a 3x3 grid.</span>
 <span class="sd">    Each subplot will show the distribution of the score (e.g., 'F1' or 'Jaccard Score') for the 'Tested Character'</span>
@@ -11860,12 +11860,12 @@ Character 'b': Kruskal-Wallis H = 5.7683, p-value = 0.0559, Effect Size (Eta-Squ
 <div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 
-<span class="k">def</span> <span class="nf">plot_character_counts</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_character_counts</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot bar charts for 'Tested Character' and 'Surplus Character' counts per 'Condition'.</span>
 
@@ -12077,7 +12077,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">plot_character_correlations_by_condition</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_character_correlations_by_condition</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot correlation matrices for each condition, showing the relationship between the 'Tested Character'</span>
 <span class="sd">    and the 'Missed Character' and 'Surplus Character'.</span>
@@ -12205,11 +12205,11 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">plot_character_correlations_by_condition</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_character_correlations_by_condition</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot correlation matrices for each condition, showing the relationship between the 'Tested Character'</span>
 <span class="sd">    and the 'Missed Character' and 'Surplus Character' with percentage values.</span>
@@ -12358,9 +12358,9 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="k">def</span> <span class="nf">one_hot_encode_submitted_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">one_hot_encode_submitted_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    One-hot encode the 'Submitted Value' column in the dataframe.</span>
 
@@ -13260,14 +13260,14 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 <div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics.pairwise</span><span class="w"> </span><span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
 
-<span class="k">def</span> <span class="nf">one_hot_encode_submitted_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">one_hot_encode_submitted_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    One-hot encode the 'Submitted Value' column in the dataframe.</span>
 
@@ -13290,7 +13290,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 
     <span class="k">return</span> <span class="n">df</span>
 
-<span class="k">def</span> <span class="nf">plot_pca_for_grouped_data</span><span class="p">(</span><span class="n">df_encoded</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_pca_for_grouped_data</span><span class="p">(</span><span class="n">df_encoded</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot PCA visualization for one-hot encoded 'Submitted Value' and 'Ground Truth' vectors, with labels for each condition,</span>
 <span class="sd">    and create plots for each 'Tested Character' in a 3x3 grid. Vectors with the same 'Tested Character'</span>
