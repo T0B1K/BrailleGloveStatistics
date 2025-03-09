@@ -57,4 +57,4 @@ jobs:
           git commit -m "Add converted HTML files"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.NEW_DEPLOYMENT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
