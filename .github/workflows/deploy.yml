@@ -58,16 +58,24 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+            
+          # Add the changes to the docs/ folder
           git add docs/
           git commit -m "Add converted HTML files"
+            
+          # Set the remote URL to use the token for authentication
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-        
-          # Fetch and merge changes from the remote gh-pages branch
+            
+          # Fetch the latest changes from the gh-pages branch
           git fetch origin gh-pages
+            
+          # Checkout the gh-pages branch
           git checkout gh-pages
-          git merge origin/gh-pages --strategy-option=theirs
-        
-          # Push the changes
+            
+          # Merge changes from main into gh-pages (if needed)
+          git merge origin/main --strategy-option=theirs
+            
+          # Push the changes to the gh-pages branch
           git push origin gh-pages
         
         
