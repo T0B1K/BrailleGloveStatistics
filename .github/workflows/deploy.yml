@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+      
 jobs:
   convert:
     runs-on: ubuntu-latest
@@ -48,13 +51,15 @@ jobs:
           jupyter nbconvert --to html study2_experiment.ipynb
           mv *.html ../../../docs/second-study
           cd ../../..
-
+          
       - name: Commit and push changes
-        run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git add docs/
-          git commit -m "Add converted HTML files"
-          git push
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add docs/
+          git commit -m "Add converted HTML files"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin HEAD:gh-pages
+        
