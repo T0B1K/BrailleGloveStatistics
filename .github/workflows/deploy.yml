@@ -73,6 +73,6 @@ jobs:
           git checkout -b pages
           
           # Push the changes to the new 'pages' branch
-          git push origin pages
+          git push --force origin pages
         
         
