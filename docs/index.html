@@ -23,14 +23,25 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
-        /* Initially hide the submenus */
-        nav ul li ul {
+        .study-content {
             display: none;
-            margin-left: 20px;
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
         }
-        /* Container for loaded HTML content */
-        .content {
-            display: none;
+        .unfold-button {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .unfold-button:hover {
+            color: #0056b3;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
             margin-top: 10px;
         }
     </style>
@@ -39,52 +50,59 @@
     <h1>Studies Overview</h1>
     <nav>
         <ul>
-            <li>
-                <strong onclick="toggleVisibility('first-study', 'first-study-content')">First Study</strong>
-                <ul id="first-study">
-                    <li><a href="javascript:void(0)" onclick="loadContent('first-study/study1_questionnaire.html', 'first-study-content')">Questionnaires</a></li>
-                    <li><a href="javascript:void(0)" onclick="loadContent('first-study/study1_experiment.html', 'first-study-content')">Experiments</a></li>
-                </ul>
-                <div id="first-study-content" class="content"></div>
+            <li><strong>First Study Questionnaire</strong>
+                <button class="unfold-button" onclick="toggleContent('first-study-questionnaire')">Unfold</button>
+                <div class="study-content" id="first-study-questionnaire">
+                    <iframe id="first-study-questionnaire-iframe" src="" style="display:none;"></iframe>
+                </div>
             </li>
-            <li>
-                <strong onclick="toggleVisibility('second-study', 'second-study-content')">Second Study</strong>
-                <ul id="second-study">
-                    <li><a href="javascript:void(0)" onclick="loadContent('second-study/study2_questionnaire.html', 'second-study-content')">Questionnaires</a></li>
-                    <li><a href="javascript:void(0)" onclick="loadContent('second-study/study2_experiment.html', 'second-study-content')">Experiments</a></li>
-                </ul>
-                <div id="second-study-content" class="content"></div>
+            <li><strong>First Study Experiments</strong>
+                <button class="unfold-button" onclick="toggleContent('first-study-experiment')">Unfold</button>
+                <div class="study-content" id="first-study-experiment">
+                    <iframe id="first-study-experiment-iframe" src="" style="display:none;"></iframe>
+                </div>
+            </li>
+            <li><strong>Second Study Questionnaire</strong>
+                <button class="unfold-button" onclick="toggleContent('second-study-questionnaire')">Unfold</button>
+                <div class="study-content" id="second-study-questionnaire">
+                    <iframe id="second-study-questionnaire-iframe" src="" style="display:none;"></iframe>
+                </div>
+            </li>
+            <li><strong>Second Study Experiments</strong>
+                <button class="unfold-button" onclick="toggleContent('second-study-experiment')">Unfold</button>
+                <div class="study-content" id="second-study-experiment">
+                    <iframe id="second-study-experiment-iframe" src="" style="display:none;"></iframe>
+                </div>
             </li>
         </ul>
     </nav>
 
     <script>
-        // Function to toggle the visibility of the submenu and content
-        function toggleVisibility(studyId, contentId) {
-            const submenu = document.getElementById(studyId);
-            const content = document.getElementById(contentId);
-            if (submenu.style.display === 'none' || submenu.style.display === '') {
-                submenu.style.display = 'block'; // Unfold
-                content.style.display = 'none'; // Hide content if menu is folded
+        function toggleContent(studyId) {
+            const content = document.getElementById(studyId);
+            const iframe = document.getElementById(studyId + '-iframe');
+            const button = content.previousElementSibling;
+            
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                iframe.style.display = "block"; // Display the iframe
+                // Load the HTML file into the iframe
+                if (studyId === "first-study-questionnaire") {
+                    iframe.src = "first-study/study1_questionnaire.html";
+                } else if (studyId === "first-study-experiment") {
+                    iframe.src = "first-study/study1_experiment.html";
+                } else if (studyId === "second-study-questionnaire") {
+                    iframe.src = "second-study/study2_questionnaire.html";
+                } else if (studyId === "second-study-experiment") {
+                    iframe.src = "second-study/study2_experiment.html";
+                }
+                button.textContent = "Fold"; // Change button text to "Fold"
             } else {
-                submenu.style.display = 'none'; // Fold back
-                content.style.display = 'none'; // Hide content when folded
+                content.style.display = "none";
+                iframe.style.display = "none"; // Hide the iframe
+                iframe.src = ""; // Clear the iframe content
+                button.textContent = "Unfold"; // Change button text back to "Unfold"
             }
-        }
-
-        // Function to load content dynamically into the div
-        function loadContent(url, contentId) {
-            const contentDiv = document.getElementById(contentId);
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    contentDiv.innerHTML = data; // Insert the HTML content into the div
-                    contentDiv.style.display = 'block'; // Display the content
-                })
-                .catch(error => {
-                    contentDiv.innerHTML = "<p>Error loading content.</p>"; // Error message
-                    contentDiv.style.display = 'block';
-                });
         }
     </script>
 </body>
