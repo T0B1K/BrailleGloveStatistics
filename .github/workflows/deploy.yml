@@ -61,5 +61,13 @@ jobs:
           git add docs/
           git commit -m "Add converted HTML files"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          git push origin HEAD:gh-pages
+        
+          # Fetch and merge changes from the remote gh-pages branch
+          git fetch origin gh-pages
+          git checkout gh-pages
+          git merge origin/gh-pages --strategy-option=theirs
+        
+          # Push the changes
+          git push origin gh-pages
+        
         
