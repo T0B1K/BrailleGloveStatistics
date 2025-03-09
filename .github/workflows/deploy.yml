@@ -48,16 +48,6 @@ jobs:
           jupyter nbconvert --to html study2_experiment.ipynb
           mv *.html ../../../docs/second-study
           cd ../../..
- 
-    #   - name: Create docs directory if not exists
-    #     run: mkdir -p docs
-
-    #   - name: Move HTML files to docs
-    #     run: |
-    #       mv study1/questionnaire/*.html docs/
-    #       mv study1/experiment/*.html docs/
-    #       mv study2/questionnaire/*.html docs/
-    #       mv study2/experiment/*.html docs/
 
       - name: Commit and push changes
         run: |
