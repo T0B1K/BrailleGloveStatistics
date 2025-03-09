@@ -21,18 +21,39 @@ jobs:
           python -m pip install --upgrade pip
           pip install nbconvert
 
-      - name: Find and Convert Notebooks
+      - name: Convert Study 1 Questionnaires
         run: |
-          for notebook in $(find study1 -name "*.ipynb"); do
-            jupyter nbconvert --to html "$notebook"
-          done
+          cd study1/questionnaire
+          jupyter nbconvert --to html study1_questionnaire.ipynb
+          cd ../..
 
+      - name: Convert Study 1 Experiments
+        run: |
+          cd study1/experiment
+          jupyter nbconvert --to html study1_experiment.ipynb
+          cd ../..
+
+      - name: Convert Study 2 Questionnaires
+        run: |
+          cd study2/questionnaire
+          jupyter nbconvert --to html study2_questionnaire.ipynb
+          cd ../..
+  
+      - name: Convert Study 2 Experiments
+        run: |
+          cd study2/experiment
+          jupyter nbconvert --to html study2_experiment.ipynb
+          cd ../..
+ 
       - name: Create docs directory if not exists
         run: mkdir -p docs
 
       - name: Move HTML files to docs
         run: |
-          find study1 -name "*.html" -exec mv {} docs/ \;
+          mv study1/questionnaire/*.html docs/
+          mv study1/experiment/*.html docs/
+          mv study2/questionnaire/*.html docs/
+          mv study2/experiment/*.html docs/
 
       - name: Commit and push changes
         run: |
