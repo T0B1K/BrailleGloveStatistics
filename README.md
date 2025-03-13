@@ -19,7 +19,7 @@ This repository contains code and data for analyzing two studies: one on encodin
 # Internals
 ## GitHub Page
 
-The plots and code used for both studies in the GitHub pages hosted at https://t0b1k.github.io/BrailleGloveStatistics/. This page was automatically built by converting the Jupyter notebook files to HTML and uploading them through the CI/CD pipeline.
+The plots and code used for both studies in the GitHub pages hosted at [**GithubPages**](https://t0b1k.github.io/BrailleGloveStatistics/). This page was automatically built by converting the Jupyter notebook files to HTML and uploading them through the CI/CD pipeline.
 That is responsible for converting the Jupyter notebooks (.ipynb files) to HTML format and uploading them to the GitHub Pages site, making the notebooks and results available for online viewing.
 
 
@@ -84,6 +84,7 @@ To set up the environment, just open the Jupyter Notebook files in Google Colab,
 
 
 ## Folder Structure Tree
+```
 .
 ├── .github/
 │   └── workflows/
@@ -115,3 +116,4 @@ To set up the environment, just open the Jupyter Notebook files in Google Colab,
 │   │   └── study2_questionnaire.ipynb    # Jupyter notebook for analyzing questionnaire data
 ├── README.md                             # Project overview and instructions
 └── requirements.txt                      # List of dependencies (for Python environment)
+```
