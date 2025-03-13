@@ -12,13 +12,28 @@
             background-color: #f5f7fa;
             height: 100vh;
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
         }
         nav ul li {
-            margin: 5px 0;
+            margin: 10px 0;
         }
         nav ul li a {
             text-decoration: none;
@@ -51,35 +66,37 @@
     </style>
 </head>
 <body>
-    <h1>Studies Overview</h1>
-    <nav>
-        <ul>
-            <li><strong><span style="color: #ea6b66; font-weight: bold;">First Study</span> Questionnaire</strong>
-                <button class="unfold-button" onclick="toggleContent('first-study-questionnaire')">Unfold</button>
-                <div class="study-content" id="first-study-questionnaire">
-                    <iframe id="first-study-questionnaire-iframe" src="" style="display:none;"></iframe>
-                </div>
-            </li>
-            <li><strong><span style="color: #ea6b66; font-weight: bold;">First Study</span> Experiments</strong>
-                <button class="unfold-button" onclick="toggleContent('first-study-experiment')">Unfold</button>
-                <div class="study-content" id="first-study-experiment">
-                    <iframe id="first-study-experiment-iframe" src="" style="display:none;"></iframe>
-                </div>
-            </li>
-            <li><strong><span style="color: #3db5a4; font-weight: bold;">Second Study</span> Questionnaire</strong>
-                <button class="unfold-button" onclick="toggleContent('second-study-questionnaire')">Unfold</button>
-                <div class="study-content" id="second-study-questionnaire">
-                    <iframe id="second-study-questionnaire-iframe" src="" style="display:none;"></iframe>
-                </div>
-            </li>
-            <li><strong><span style="color: #3db5a4; font-weight: bold;">Second Study</span> Experiments</strong>
-                <button class="unfold-button" onclick="toggleContent('second-study-experiment')">Unfold</button>
-                <div class="study-content" id="second-study-experiment">
-                    <iframe id="second-study-experiment-iframe" src="" style="display:none;"></iframe>
-                </div>
-            </li>
-        </ul>
-    </nav>
+    <div class="container">
+        <h1>Studies Overview</h1>
+        <nav>
+            <ul>
+                <li><strong><span style="color: #ea6b66; font-weight: bold;">First Study</span> Questionnaire</strong>
+                    <button class="unfold-button" onclick="toggleContent('first-study-questionnaire')">Unfold</button>
+                    <div class="study-content" id="first-study-questionnaire">
+                        <iframe id="first-study-questionnaire-iframe" src="" style="display:none;"></iframe>
+                    </div>
+                </li>
+                <li><strong><span style="color: #ea6b66; font-weight: bold;">First Study</span> Experiments</strong>
+                    <button class="unfold-button" onclick="toggleContent('first-study-experiment')">Unfold</button>
+                    <div class="study-content" id="first-study-experiment">
+                        <iframe id="first-study-experiment-iframe" src="" style="display:none;"></iframe>
+                    </div>
+                </li>
+                <li><strong><span style="color: #3db5a4; font-weight: bold;">Second Study</span> Questionnaire</strong>
+                    <button class="unfold-button" onclick="toggleContent('second-study-questionnaire')">Unfold</button>
+                    <div class="study-content" id="second-study-questionnaire">
+                        <iframe id="second-study-questionnaire-iframe" src="" style="display:none;"></iframe>
+                    </div>
+                </li>
+                <li><strong><span style="color: #3db5a4; font-weight: bold;">Second Study</span> Experiments</strong>
+                    <button class="unfold-button" onclick="toggleContent('second-study-experiment')">Unfold</button>
+                    <div class="study-content" id="second-study-experiment">
+                        <iframe id="second-study-experiment-iframe" src="" style="display:none;"></iframe>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
     <script>
         function toggleContent(studyId) {
