@@ -58,6 +58,16 @@ console.table() test_data(1).html:311:21
 Test e
 Submitted Value dk
 Test Time (ms) 1009
+console.table() test_data(2).html:311:21
+(Position)	Wert
+Test	the
+Submitted Value	ks slk dlj
+Test Time (ms)	5142
+console.table() test_data(2).html:311:21
+(Position)	Wert
+Test	the
+Submitted Value	kd ls lk
+Test Time (ms)	4352
 console.table() test_data(1).html:311:21
 (Position) Wert
 Test o
@@ -103,6 +113,19 @@ console.table() test_data(1).html:311:21
 Test d
 Submitted Value fjk
 Test Time (ms) 894
+
+console.table() test_data(2).html:311:21
+(Position)	Wert
+Test	old
+Submitted Value	kls sdf ld
+Test Time (ms)	5751
+console.table() test_data(2).html:311:21
+(Position)	Wert
+Test	old
+Submitted Value	ls sdf ld
+Test Time (ms)	3331
+console.table() test_data(2).html:311:21
+(Position)	Wert
 console.table() test_data(1).html:311:21
 (Position) Wert
 Test p
